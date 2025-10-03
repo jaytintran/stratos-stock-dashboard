@@ -3,10 +3,6 @@
 
 @custom-variant dark (&:is(.dark *));
 
-@theme {
-	--color-yellow-400: "#FDD458";
-}
-
 @theme inline {
 	--color-background: var(--background);
 	--color-foreground: var(--foreground);
@@ -141,6 +137,16 @@
 		@apply border-border outline-ring/50;
 	}
 	body {
-		@apply bg-background text-foreground;
+		@apply bg-gray-900 text-foreground;
+	}
+}
+
+@layer utilities {
+	.header {
+		@apply z-50 w-full bg-gray-800 min-h-[70px];
+	}
+
+	.home-wrapper {
+		@apply flex-col gap-4 items-start max-sm:items-center;
 	}
 }
