@@ -28,7 +28,7 @@ const Header = () => {
 					<NavItems />
 				</nav>
 
-				{/* User Dropdown in Mobile */}
+				{/* User Dropdown in Mobile - This dropdown contains only Logout and Profile on bigger devices */}
 				<div className="">
 					<UserDropdown />
 				</div>
