@@ -6,8 +6,8 @@ import UserDropdown from "./UserDropdown";
 
 const Header = () => {
 	return (
-		<header className="sticky top-0 header flex">
-			<div className="container mx-auto flex justify-between items-center text-gray-500">
+		<header className="sticky top-0 header">
+			<div className="container mx-auto flex justify-between items-center px-6 py-4 text-gray-500">
 				<Link
 					href={"/"}
 					className="flex gap-1 items-center cursor-pointer w-auto"
