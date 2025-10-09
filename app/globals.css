@@ -149,4 +149,25 @@
 	.home-wrapper {
 		@apply flex-col gap-4 items-start max-sm:items-center;
 	}
+	.home-container {
+		@apply w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 text-gray-400;
+	}
+}
+
+.tradingview-widget-container {
+	position: relative;
+	background-color: #141414 !important;
+	border-radius: 8px !important;
+	overflow: hidden !important;
+}
+
+.tradingview-widget-container__widget {
+	background-color: #141414 !important;
+	height: 100% !important;
+}
+
+.widget-stock-heatmap-container .screenerMapWrapper-BBVfGP0b {
+	overflow: hidden !important;
+	background: #141414 !important;
+	background-color: #141414 !important;
 }
