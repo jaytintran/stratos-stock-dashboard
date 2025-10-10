@@ -15,10 +15,10 @@ const Header = () => {
 					<Image
 						src={"/assets/icons/logo-2.svg"}
 						alt="Stratos Logo"
-						width={35}
-						height={35}
+						width={50}
+						height={50}
 					/>
-					<p className="max-sm:hidden inline uppercase font-bold text-white antialiased">
+					<p className="text-2xl max-sm:hidden inline uppercase font-bold text-white antialiased">
 						Stratos
 					</p>
 				</Link>
