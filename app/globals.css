@@ -165,6 +165,20 @@
 	.auth-blockquote {
 		@apply text-sm md:text-xl lg:text-2xl font-medium text-gray-300 mb-1 md:mb-6 lg:mb-8;
 	}
+
+	.yellow-btn {
+		@apply bg-yellow-400 text-gray-900 hover:bg-yellow-500 lg:w-full inline;
+	}
+
+	.form-title {
+		@apply text-2xl font-bold text-gray-400 not-italic mb-5;
+	}
+	.form-label {
+		@apply text-sm font-medium text-gray-400;
+	}
+	.form-input {
+		@apply h-12 px-4 py-2 border border-gray-600 rounded-lg bg-gray-800 text-sm placeholder-gray-500;
+	}
 }
 
 .tradingview-widget-container {
