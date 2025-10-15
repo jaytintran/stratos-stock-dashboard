@@ -1,5 +1,3 @@
-import { FieldError, RegisterOptions, UseFormRegister } from "react-hook-form";
-
 declare global {
 	interface SignUpFormData {
 		fullName: string;
@@ -38,6 +36,18 @@ declare global {
 		name: string;
 		label: string;
 		placeholder: string;
+		options: { value: string; label: string }[];
+		error?: FieldError;
+		control: Control;
+		required?: boolean;
+	};
+
+	type CountrySelectFieldProps = {
+		name: string;
+		label: string;
+		control: Control;
+		error?: FieldError;
+		required?: boolean;
 	};
 }
 

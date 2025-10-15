@@ -167,7 +167,7 @@
 	}
 
 	.yellow-btn {
-		@apply bg-yellow-400 text-gray-900 hover:bg-yellow-500 lg:w-full inline;
+		@apply bg-yellow-400 text-gray-900 hover:bg-yellow-500 lg:w-full;
 	}
 
 	.form-title {
@@ -178,6 +178,13 @@
 	}
 	.form-input {
 		@apply h-12 px-4 py-2 border border-gray-600 rounded-lg bg-gray-800 text-sm placeholder-gray-500;
+	}
+
+	.select-trigger {
+		@apply w-full !h-12 px-3 py-3 text-base border-gray-600 bg-gray-800 text-white rounded-lg focus:!border-yellow-500 focus:ring-0;
+	}
+	.country-select-wrapper {
+		@apply h-12 px-4 py-2 border bg-gray-800 border-gray-600 rounded-lg flex justify-between items-center;
 	}
 }
 
@@ -197,4 +204,13 @@
 	overflow: hidden !important;
 	background: #141414 !important;
 	background-color: #141414 !important;
+}
+
+.scrollbar-hidden {
+	scrollbar-width: none; /* Firefox */
+	-ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+.scrollbar-hidden::-webkit-scrollbar {
+	display: none; /* WebKit */
 }
