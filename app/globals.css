@@ -186,6 +186,10 @@
 	.country-select-wrapper {
 		@apply h-12 px-4 py-2 border bg-gray-800 border-gray-600 rounded-lg flex justify-between items-center;
 	}
+
+	.footer-link {
+		@apply text-gray-400 font-medium hover:text-yellow-400 hover:underline transition-colors;
+	}
 }
 
 .tradingview-widget-container {
@@ -213,4 +217,29 @@
 
 .scrollbar-hidden::-webkit-scrollbar {
 	display: none; /* WebKit */
+}
+
+/* Custom scrollbar for auth-left-section */
+.auth-left-section::-webkit-scrollbar {
+	width: 6px;
+}
+
+.auth-left-section::-webkit-scrollbar-track {
+	background: #212328;
+	border-radius: 3px;
+}
+
+.auth-left-section::-webkit-scrollbar-thumb {
+	background: #30333a;
+	border-radius: 3px;
+}
+
+.auth-left-section::-webkit-scrollbar-thumb:hover {
+	background: #9095a1;
+}
+
+/* Firefox scrollbar styling */
+.auth-left-section {
+	scrollbar-width: thin;
+	scrollbar-color: #30333a #212328;
 }
