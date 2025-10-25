@@ -8,7 +8,7 @@ import { mongodbAdapter } from "better-auth/adapters/mongodb";
 import { connectToDatabase } from "@/database/mongoose";
 
 // Import Next.js cookies plugin for session management
-import { nextCookies } from "better-auth/next";
+import { nextCookies } from "better-auth/next-js";
 
 // Create a variable to store our auth instance (starts as null)
 // This prevents creating multiple auth instances (singleton pattern)
