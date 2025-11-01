@@ -17,7 +17,7 @@ declare global {
 	interface WelcomeEmailData {
 		email: string;
 		name: string;
-		info: string;
+		intro: string;
 	}
 
 	interface FormInputProps {
@@ -54,6 +54,12 @@ declare global {
 		text: string;
 		linkText: string;
 		href: string;
+	};
+
+	type User = {
+		id: string;
+		name: string;
+		email: string;
 	};
 }
 

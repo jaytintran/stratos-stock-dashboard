@@ -127,7 +127,6 @@ Content guidelines:
 - For each news article, include its actual headline/title from the news data
 - Provide MINIMUM 3 CONCISE bullet points (NO "Key Takeaways" label - start directly with bullets)
 - Each bullet should be SHORT and EASY TO UNDERSTAND - one clear sentence preferred
-- Use PLAIN ENGLISH - avoid jargon, complex financial terms, or insider language
 - Explain concepts as if talking to someone new to investing
 - Include specific numbers but explain what they mean in simple terms
 - Add "Bottom Line" context in everyday language anyone can understand

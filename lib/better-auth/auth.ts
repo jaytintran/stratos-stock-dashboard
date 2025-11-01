@@ -67,3 +67,17 @@ export const getAuth = async () => {
 // Create and export the auth instance to use throughout the app
 // This will be run wherever the module is imported
 export const auth = await getAuth();
+
+// All auth built-in methods available:
+// - auth.api.signUpEmail: Create new user with email/password
+// - auth.api.signInEmail: Sign in existing user with email/password
+// - auth.api.signOut: Sign out current user
+// - auth.api.getSession: Get current user session
+// - auth.api.updateUser: Update user profile information
+// - auth.api.changePassword: Change user password
+// - auth.api.resetPassword: Reset forgotten password
+// - auth.api.verifyEmail: Verify user email address
+// - auth.api.deleteUser: Delete user account
+// - auth.api.listSessions: List all active sessions for a user
+// - auth.api.revokeSession: Revoke a specific session
+// - auth.api.revokeSessions: Revoke all sessions for a user

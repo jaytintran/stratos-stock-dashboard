@@ -3,9 +3,13 @@
 import FooterLink from "@/components/forms/FooterLink";
 import InputField from "@/components/forms/InputField";
 import { Button } from "@/components/ui/button";
+import { signIn } from "@/lib/actions/auth.actions";
 import { useForm, SubmitHandler } from "react-hook-form";
+import { useRouter } from "next/navigation";
+import { toast } from "sonner";
 
 const SignIn = () => {
+	const router = useRouter();
 	const {
 		register,
 		handleSubmit,
@@ -19,9 +23,24 @@ const SignIn = () => {
 	});
 	const onSubmit = async (data: SignInFormData) => {
 		try {
-			console.log(data);
+			const result = await signIn(data);
+
+			if (result?.success === false) {
+				// Sign in failed - show error toast
+				toast.error("Sign in failed", {
+					description:
+						(result.message && "Email or password is incorrect") ||
+						"Failed to sign in",
+				});
+			} else {
+				// Sign in was successful (no error returned)
+				router.push("/");
+			}
 		} catch (error) {
 			console.error(error);
+			toast.error("Sign in failed", {
+				description: "An unexpected error occurred",
+			});
 		}
 	};
 

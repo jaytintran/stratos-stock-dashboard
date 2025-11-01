@@ -1,3 +1,4 @@
+import { sendWelcomeEmail } from "../nodemailer";
 import { inngestClient } from "./client";
 import { PERSONALIZED_WELCOME_EMAIL_PROMPT } from "./prompts";
 
@@ -18,7 +19,7 @@ export const sendSignUpEmail = inngestClient.createFunction(
 		);
 
 		const response = await step.ai.infer("generate-welcome-intro", {
-			model: step.ai.models.gemini({ model: "gemini-2.5-flash-lite" }),
+			model: step.ai.models.gemini({ model: "gemini-2.0-flash-lite" }),
 			body: {
 				contents: [{ role: "user", parts: [{ text: prompt }] }],
 			},
@@ -29,11 +30,20 @@ export const sendSignUpEmail = inngestClient.createFunction(
 			const introText =
 				(part && "text" in part ? part.text : null) ||
 				"Thanks for joining Stratos. You now have a tool to track markets and make smarter moves!";
-			// Email Sending Logic
+
+			const {
+				data: { email, name },
+			} = event;
+
+			return await sendWelcomeEmail({
+				email,
+				name,
+				intro: introText,
+			});
 		});
 
 		return {
-			succes: true,
+			success: true,
 			message: "Welcome email sent successfully!",
 		};
 	}

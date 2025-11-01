@@ -4,7 +4,7 @@ import React from "react";
 import NavItems from "./NavItems";
 import UserDropdown from "./UserDropdown";
 
-const Header = () => {
+const Header = ({ user }: { user: User }) => {
 	return (
 		<header className="sticky top-0 header">
 			<div className="container mx-auto flex justify-between items-center px-6 py-4 text-gray-500">
@@ -23,14 +23,14 @@ const Header = () => {
 					</p>
 				</Link>
 
-				<nav className="max-sm:hidden block">
+				<nav className="max-sm:hidden">
 					{/* Nav Items */}
 					<NavItems />
 				</nav>
 
 				{/* User Dropdown in Mobile - This dropdown contains only Logout and Profile on bigger devices */}
 				<div className="">
-					<UserDropdown />
+					<UserDropdown user={user} />
 				</div>
 			</div>
 		</header>

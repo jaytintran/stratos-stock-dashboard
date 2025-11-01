@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { Toaster } from "@/components/ui/sonner";
+
 const Layout = ({ children }: { children: React.ReactNode }) => {
 	return (
 		<main className="auth-layout scrollbar-hide-default">
@@ -64,6 +66,8 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 					/>
 				</div>
 			</section>
+
+			<Toaster position="top-left" />
 		</main>
 	);
 };

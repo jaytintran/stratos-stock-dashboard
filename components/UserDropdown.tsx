@@ -12,20 +12,18 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 import { useRouter } from "next/navigation";
 import { Button } from "./ui/button";
-import { LogOut, LogOutIcon } from "lucide-react";
+import { LogOut } from "lucide-react";
 import NavItems from "./NavItems";
+import { signOut } from "@/lib/actions/auth.actions";
 
-const UserDropdown = () => {
+const UserDropdown = ({ user }: { user: User }) => {
 	const router = useRouter();
 
 	const handleSignOut = async () => {
+		await signOut();
 		router.push("/sign-in");
 	};
 
-	const user = {
-		name: "Tin",
-		email: "jaytin@tudostudio.com",
-	};
 	return (
 		<DropdownMenu>
 			<DropdownMenuTrigger asChild>
@@ -77,9 +75,7 @@ const UserDropdown = () => {
 					<LogOut className="h-4 w-4 mr-2 block max-sm:hidden" /> Log Out
 				</DropdownMenuItem>
 
-				<DropdownMenuSeparator className="bg-gray-600" />
-
-				<nav className="max-sm:block hidden">
+				<nav className="hidden max-sm:block">
 					<NavItems />
 				</nav>
 			</DropdownMenuContent>

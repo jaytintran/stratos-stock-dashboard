@@ -6,19 +6,23 @@ import { usePathname } from "next/navigation";
 
 const NavItems = () => {
 	const pathname = usePathname();
+	const isActive = (path: string) => {
+		if (path === "/") return pathname === "/";
+
+		return pathname.startsWith(path);
+	};
 	return (
-		<ul className="flex max-sm:flex-col flex-row p-2 max-sm:gap-3 gap-10 font-medium">
-			{NAV_ITEMS.map(({ title, href }) => {
-				const isActive = pathname === href;
+		<ul className="flex flex-col sm:flex-row p-2 gap-3 sm:gap-10 font-medium">
+			{NAV_ITEMS.map(({ label, href }) => {
 				return (
-					<li key={title}>
+					<li key={label}>
 						<Link
 							href={href}
-							className={`hover:text-yellow-400 transition-colors ${
-								isActive ? "text-white" : "text-gray-400"
+							className={`hover:text-yellow-400 hover:cursor-pointer transition-colors ${
+								isActive(href) ? "text-white" : "text-gray-400"
 							}`}
 						>
-							{title}
+							{label}
 						</Link>
 					</li>
 				);
