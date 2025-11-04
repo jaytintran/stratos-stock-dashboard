@@ -3,7 +3,7 @@
 import FooterLink from "@/components/forms/FooterLink";
 import InputField from "@/components/forms/InputField";
 import { Button } from "@/components/ui/button";
-import { signIn } from "@/lib/actions/auth.actions";
+import { signInWithEmail } from "@/lib/actions/auth.actions";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
@@ -23,7 +23,7 @@ const SignIn = () => {
 	});
 	const onSubmit = async (data: SignInFormData) => {
 		try {
-			const result = await signIn(data);
+			const result = await signInWithEmail(data);
 
 			if (result?.success === false) {
 				// Sign in failed - show error toast

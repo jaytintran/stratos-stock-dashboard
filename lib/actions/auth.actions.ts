@@ -85,7 +85,7 @@ export const signOut = async () => {
 };
 
 // Server action to handle sign in
-export const signIn = async (data: SignInFormData) => {
+export const signInWithEmail = async (data: SignInFormData) => {
 	try {
 		await auth.api.signInEmail({
 			body: {
