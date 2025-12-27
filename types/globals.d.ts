@@ -61,6 +61,23 @@ declare global {
 		name: string;
 		email: string;
 	};
+
+	type Stock = {
+		symbol: string;
+		name: string;
+		exchange: string;
+		type: string;
+	};
+
+	type StockWithWatchlistStatus = Stock & {
+		isInWatchlist: boolean;
+	};
+
+	type SearchCommandProps = {
+		renderAs?: "button" | "text";
+		label?: string;
+		initialStocks: StockWithWatchlistStatus[];
+	};
 }
 
 declare module "*.css" {
