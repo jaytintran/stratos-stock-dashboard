@@ -3,8 +3,10 @@ import Link from "next/link";
 import React from "react";
 import NavItems from "./NavItems";
 import UserDropdown from "./UserDropdown";
+import { searchStocks } from "@/lib/actions/finnhub.actions";
 
-const Header = ({ user }: { user: User }) => {
+const Header = async ({ user }: { user: User }) => {
+	const initialStocks = await searchStocks();
 	return (
 		<header className="sticky top-0 header">
 			<div className="container mx-auto flex justify-between items-center px-6 py-4 text-gray-500">
@@ -25,12 +27,12 @@ const Header = ({ user }: { user: User }) => {
 
 				<nav className="max-sm:hidden">
 					{/* Nav Items */}
-					<NavItems />
+					<NavItems initialStocks={initialStocks} />
 				</nav>
 
 				{/* User Dropdown in Mobile - This dropdown contains only Logout and Profile on bigger devices */}
 				<div className="">
-					<UserDropdown user={user} />
+					<UserDropdown user={user} initialStocks={initialStocks} />
 				</div>
 			</div>
 		</header>
