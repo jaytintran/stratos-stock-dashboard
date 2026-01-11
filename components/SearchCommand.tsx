@@ -59,8 +59,8 @@ const SearchCommand = ({
 		async (term: string) => {
 			// If search is empty, reset to initial stocks
 			if (!term.trim()) return setStocks(initialStocks);
-
 			setLoading(true);
+
 			try {
 				// Call API to search for stocks matching the term
 				const results = await searchStocks(term.trim());
@@ -166,10 +166,11 @@ const SearchCommand = ({
 										onSelect={() => handleSelectStock(stock.symbol)}
 									>
 										<Link
-											href={`/stock/${stock.symbol}`}
+											href={`/stocks/${stock.symbol}`}
 											className="search-item-link flex items-center gap-2 w-full"
 										>
 											<TrendingUp className="w-4 h-4 text-gray-500" />
+
 											<div className="flex-1">
 												<div className="search-item-name">{stock.name}</div>
 												<div className="text-sm text-gray-500">
