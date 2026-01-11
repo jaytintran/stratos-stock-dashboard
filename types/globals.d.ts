@@ -89,6 +89,12 @@ declare global {
 		count: number;
 		result: FinnhubSearchResult[];
 	};
+
+	type StockDetailsPageProps = {
+		params: {
+			symbol: string;
+		};
+	};
 }
 
 declare module "*.css" {
